@@ -1,0 +1,98 @@
+<html> 
+<style type="text/css">
+<!--
+.Style1 {
+	font-size: medium;
+	font-weight: bold;
+	color: #FFCC99;
+}
+.Style2 {color: #FF0000}
+.Style3 {color: #000000}
+.Style21 {
+	color: #0000FF;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.Style22 {font-family: Arial, Helvetica, sans-serif}
+.Style23 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
+.Style12 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #000000;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+-->
+</style>
+<body bgcolor="white" background="../images/Osenseiclair.jpg">
+<div id="datacontainer" style="width:1020px; height:696px; position:absolute; left:74px; top:2px; z-index:1;" onMouseOver="scrollspeed=0" onMouseOut="scrollspeed=cache"> 
+  <p class="Style1">&nbsp;</p>
+    <div align="left">
+        <p align="left"><font face="Times New Roman, Times, serif" size="7" color="#990033">*</font></p>
+        <p align="left"><b><font color="blue"><span style="font-size:16pt; background-color:white;">&nbsp;&nbsp;&nbsp;&nbsp;A voir page Rétrospective :</span></font></b><font color="blue"><span style="background-color:white;"></span></font></p>
+        <ul>
+            <li align="left">
+                <div align="left"><font color="blue"><span style="background-color:white;">&nbsp;&nbsp;&nbsp;&nbsp;Photos du 2° stage de formation des ceintures noires à Clouange.</span></font></div>
+            </li>
+            <li align="left">
+                <div align="left"><font color="blue"><span style="background-color:white;">&nbsp;&nbsp;&nbsp;&nbsp;Photos du 2° stage de bases à Clouange.</span></font></div>
+            </li>
+            <li align="left">
+                <div align="left"><font color="blue"><span style="background-color:white;">&nbsp;&nbsp;&nbsp;&nbsp;Stages Jeunes du 24 octobre 2010.</span></font></div>
+            </li>
+            <li align="left">
+                <div align="left"><font color="blue"><span style="background-color:white;">&nbsp;&nbsp;&nbsp;&nbsp;Photos de l'Ecole des Cadres du 23 octobre 2010.</span></font></div>
+            </li>
+            <li align="left">
+                <div align="left"><font face="Arial Rounded MT Bold" color="blue"><span style="font-family:Arial,Helvetica,sans-serif; font-size:12pt; background-color:white;">&nbsp;&nbsp;&nbsp;&nbsp;Photos de la rencontre interclub du 19/10.</span></font><font color="blue"><span style="background-color:white;"></span></font><font color="blue"><span style="background-color:white;"></span></font><font color="blue"><span style="background-color:white;"></span></font></div>
+            </li>
+        </ul>
+        <p align="left"><font color="blue"><span style="background-color:white;">&nbsp;</span></font></p>
+        <p align="left" class="Style22">&nbsp;<font color="blue"><span style="background-color:white;"></span></font></p>
+        <p align="left"><font color="blue"><span style="background-color:white;"></span></font></p>
+        <p align="left" class="Style23">&nbsp;    </p>
+        <DIV class="Style21">
+      <font face="Arial, Helvetica, sans-serif" color="#333333" size="3"><font face="Arial, Helvetica, sans-serif" color="#333333" size="3"><a><strong></strong></a></font></font></DIV>
+        <p align="left"><font color="#CCFFFF">-</font><font face="Times New Roman, Times, serif" size="7" color="#990033">*</font> </p>
+    </div>
+  <div align="left"></div>
+  </div>
+<script type="text/javascript">
+
+//Specify speed of scroll. Larger=faster (ie: 5)
+var scrollspeed=cache=2
+
+//Specify intial delay before scroller starts scrolling (in miliseconds):
+var initialdelay=500
+
+function initializeScroller(){
+dataobj=document.all? document.all.datacontainer : document.getElementById("datacontainer")
+dataobj.style.top="5px"
+setTimeout("getdataheight()", initialdelay)
+}
+
+function getdataheight(){
+thelength=dataobj.offsetHeight
+if (thelength==0)
+setTimeout("getdataheight()",10)
+else
+scrollDiv()
+}
+
+function scrollDiv(){
+dataobj.style.top=parseInt(dataobj.style.top)-scrollspeed+"px"
+if (parseInt(dataobj.style.top)<thelength*(-1))
+dataobj.style.top="5px"
+setTimeout("scrollDiv()",40)
+}
+
+if (window.addEventListener)
+window.addEventListener("load", initializeScroller, false)
+else if (window.attachEvent)
+window.attachEvent("onload", initializeScroller)
+else
+window.onload=initializeScroller
+
+</script>
+</html>

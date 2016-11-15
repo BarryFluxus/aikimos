@@ -1,0 +1,429 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title> Comité de Moselle d'Aïkido  </title>
+<meta name="generator" content="Namo WebEditor">
+<script language="JavaScript">
+<!--
+function namosw_init_marquee(layername1, layername2, dir, scrollamount, scrolldelay, behavior, loop, cliplen, length, height) 
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+
+  var layer1, layer2;
+
+  if (layername1 == '' || layername2 == '')
+    return;
+
+  if (is_ns4) {
+    layer1 = document.layers[layername1];
+    if (!layer1)
+      return;
+    layer2 = document.layers[layername1].document.layers[layername2];
+  } else if (is_ns6) {
+    layer1 = document.getElementById(layername1);
+    layer2 = document.getElementById(layername2);
+  } else {
+    layer1 = document.all(layername1);
+    layer2 = document.all(layername2);
+  }
+
+  if (document.all) {
+    if (dir == 'l' || dir == 'r') {
+      layer1.style.clip = 'rect(auto ' + cliplen + ' auto 0)';
+      layer1.style.pixelWidth = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.pixelLeft = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.style.pixelLeft = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.style.clip = 'rect(0 auto ' + cliplen + ' auto)';
+      layer1.style.pixelHeight = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.pixelTop = (dir == 't') ? cliplen : -length;
+      else
+        layer2.style.pixelTop = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  } else if (is_ns4) {
+    if (dir == 'l' || dir == 'r') {    
+      layer1.clip.width  = cliplen;
+      layer1.clip.height = height;
+      if (behavior == 's' || behavior == 'l')
+        layer2.left = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.left = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.clip.height = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.top = (dir == 't') ? cliplen : -length;
+      else
+        layer2.top = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  } else if (is_ns6) {
+    if (dir == 'l' || dir == 'r') {    
+      layer1.style.clip = 'rect(auto ' + cliplen + ' auto 0)';
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.left = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.style.left = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.style.clip = 'rect(0 auto ' + cliplen + ' auto)';
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.top = (dir == 't') ? cliplen : -length;
+      else
+        layer2.style.top = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  }
+
+  layer1.m_layer    = layer2;
+  layer1.m_dir      = dir;
+  layer1.m_amount   = scrollamount;
+  layer1.m_delay    = scrolldelay;
+  layer1.m_behavior = behavior;
+  layer1.m_loop     = loop;
+  layer1.m_cliplen  = cliplen;
+  layer1.m_length   = length;
+
+  if (layer1.m_behavior == 'l') {
+    if (layer1.m_loop == -1)
+      layer1.m_loop = 1;
+  }
+
+  layer1.m_interval = setInterval("namosw_marquee_scroll('" + layername1 + "');", scrolldelay);
+}
+
+function namosw_marquee_scroll(layername) 
+{
+// local functions
+//
+function get_left(l)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if      (is_ns4) return l.left;
+  else if (is_ns6) return parseInt(l.style.left);
+  else             return l.style.pixelLeft;
+}
+
+function set_left(l, value)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4)       l.left = value;
+  else if (is_ns6)  l.style.left = value;
+  else              l.style.pixelLeft = value;
+}
+
+function get_top(l)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4)       return l.top;
+  else if (is_ns6)  return l.style.top;
+  else              return l.style.pixelTop;
+}
+
+function set_top(l, value)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4) 
+    l.top = value;
+  else if (is_ns6)
+    l.style.top = value
+  else
+    l.style.pixelTop = value;
+}
+// ------------------------
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  var layer, layer2;
+
+  if (is_ns4)      layer = document.layers[layername];
+  else if (is_ns6) layer = document.getElementById(layername);
+  else             layer = document.all[layername];
+
+  layer2 = layer.m_layer;
+
+  if (layer.m_behavior == 's') {			// scroll
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) >= -layer.m_length) {
+        set_left(layer2, get_left(layer2)-layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2) < layer.m_cliplen) {
+        set_left(layer2, get_left(layer2) + layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, -layer.m_length);
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) >= -layer.m_length) {
+        set_top(layer2, get_top(layer2) - layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2) < layer.m_cliplen) {
+        set_top(layer2, get_top(layer2) + layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, -layer.m_length);
+      }
+    }
+    if (layer.m_loop == 0)
+      clearInterval(layer.m_interval);
+  } else if (layer.m_behavior == 'a') {			// alternate
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) > Math.min(0, -layer.m_length+layer.m_cliplen)) {
+        set_left(layer2, get_left(layer2)-layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        layer.m_dir = 'r';
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2) < Math.max(0, -layer.m_length+layer.m_cliplen)) {
+        set_left(layer2, get_left(layer2)+layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	layer.m_dir = 'l';
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) > Math.min(0, -layer.m_length+layer.m_cliplen)) {
+        set_top(layer2, get_top(layer2) - layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        layer.m_dir = 'b';
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2) < Math.max(0, -layer.m_length+layer.m_cliplen)) {
+        set_top(layer2, get_top(layer2)+layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	layer.m_dir = 't';
+      }
+    }
+  } else if (layer.m_behavior == 'l') {			// slide
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) > 0) {
+        set_left(layer2, Math.max(0, get_left(layer2)-layer.m_amount));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	set_left(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2)+layer.m_length < layer.m_cliplen) {
+        set_left(layer2, Math.min(get_left(layer2)+layer.m_amount, layer.m_cliplen-layer.m_length));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, -layer.m_length);
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) > 0) {
+        set_top(layer2, Math.max(0, get_top(layer2) - layer.m_amount));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2)+layer.m_length < layer.m_cliplen) {
+        set_top(layer2, Math.min(get_top(layer2)+layer.m_amount, layer.m_cliplen-layer.m_length));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, -layer.m_length);
+      }
+    }
+    if (layer.m_loop == 0)
+      clearInterval(layer.m_interval);
+  }
+}
+
+// -->
+</script>
+<script language="JavaScript">
+<!--
+function na_open_window(name, url, left, top, width, height, toolbar, menubar, statusbar, scrollbar, resizable)
+{
+  toolbar_str = toolbar ? 'yes' : 'no';
+  menubar_str = menubar ? 'yes' : 'no';
+  statusbar_str = statusbar ? 'yes' : 'no';
+  scrollbar_str = scrollbar ? 'yes' : 'no';
+  resizable_str = resizable ? 'yes' : 'no';
+
+  cookie_str = document.cookie;
+  cookie_str.toString();
+
+  pos_start  = cookie_str.indexOf(name);
+  pos_end    = cookie_str.indexOf('=', pos_start);
+
+  cookie_name = cookie_str.substring(pos_start, pos_end);
+
+  pos_start  = cookie_str.indexOf(name);
+  pos_start  = cookie_str.indexOf('=', pos_start);
+  pos_end    = cookie_str.indexOf(';', pos_start);
+  
+  if (pos_end <= 0) pos_end = cookie_str.length;
+  cookie_val = cookie_str.substring(pos_start + 1, pos_end);
+  if (cookie_name == name && cookie_val  == "done")
+    return;
+
+  window.open(url, name, 'left='+left+',top='+top+',width='+width+',height='+height+',toolbar='+toolbar_str+',menubar='+menubar_str+',status='+statusbar_str+',scrollbars='+scrollbar_str+',resizable='+resizable_str);
+}
+
+// -->
+</script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red" background="no-background" " background-repeat="no-repeat" background-position="center" OnLoad="namosw_init_marquee('layer32', 'marqueechildlayer0', 't', 10, 100, 's', -1, 324, 324, 699);">
+<div id="layer1" style="border-width:2; border-color:white; border-style:none; width:818px; height:628px; position:absolute; left:228px; top:61px; z-index:1;">
+    <p><img src="images/336-4.jpg" width="800" height="600" border="0"></p>
+</div>
+<div id="layer33" style="width:129px; height:46px; position:absolute; left:1021px; top:176px; z-index:1;">
+    <p align="right"><b><font color="blue"><span style="font-size:14pt;"><a href="commun/comite.html" target="_self">Le Comité</a></span></font></b>
+</div>
+&nbsp;
+<div id="layer33" style="width:69px; height:60px; position:absolute; left:9px; top:167px; z-index:1; background-color:transparent;">
+    <p><img src="images/religion-ying_yang-12[1].gif" width="60" height="60" border="0">
+</div>
+<div id="layer2" style="width:196px; height:94px; position:absolute; left:1034px; top:27px; z-index:1;">
+    <p><img src="images/FFABnew.jpg" width="190" height="96" border="0"></div>
+<div id="layer34" style="width:825px; height:70px; position:absolute; left:199px; top:21px; z-index:1;">
+    <p align="center"><b><font size="5" face="Kozuka Gothic Pro M" color="#AA0055">Comité départemental d'Aïkido de Moselle</font></b><font size="5">    </font>
+    
+    <p align="center"><b><font size="5" face="Kozuka Gothic Pro M" color="#AA0055">Aïkikaï de France</font></b><font size="5">
+</font>
+</div>
+<div id="layer20" style="width:94px; height:113px; position:absolute; left:9px; top:17px; z-index:1;">
+    <p>
+<img src="images/Photos/moselle.jpg" width="86" height="107" border="0"></div>
+<div id="layer3" style="width:69px; height:60px; position:absolute; left:8px; top:314px; z-index:1;">
+    <p><img src="images/y&y2.jpg" width="60" height="60" border="0">
+</div>
+<div id="layer21" style="width:69px; height:60px; position:absolute; left:7px; top:237px; z-index:1;">
+    <p><img src="images/religion-ying_yang-12[1].gif" width="60" height="60" border="0">
+</div>
+<div id="layer23" style="width:69px; height:60px; position:absolute; left:7px; top:386px; z-index:1;">
+    <p><img src="images/y&y2.jpg" width="60" height="60" border="0">
+</div>
+<div id="layer24" style="width:69px; height:60px; position:absolute; left:1157px; top:163px; z-index:1;">
+    <p><img src="images/y&y2.jpg" width="60" height="60" border="0">
+</div>
+<div id="layer25" style="width:69px; height:60px; position:absolute; left:1160px; top:247px; z-index:1;">
+    <p><img src="images/y&y2.jpg" width="60" height="60" border="0">
+</div>
+<div id="layer26" style="width:69px; height:60px; position:absolute; left:1163px; top:320px; z-index:1;">
+    <p><img src="images/religion-ying_yang-12[1].gif" width="60" height="60" border="0">
+</div>
+<div id="layer27" style="width:69px; height:60px; position:absolute; left:1162px; top:394px; z-index:1;">
+    <p><img src="images/y&y2.jpg" width="60" height="60" border="0">
+</div>
+<div id="layer28" style="width:74px; height:65px; position:absolute; left:1157px; top:464px; z-index:1;">
+    <p><img src="images/y&y2.jpg" width="60" height="60" border="0">
+</div>
+<div id="layer20" style="width:69px; height:60px; position:absolute; left:7px; top:460px; z-index:1;">
+    <p><img src="images/y&y2.jpg" width="60" height="60" border="0">
+</div>
+<div id="layer5" style="width:149px; height:47px; position:absolute; left:81px; top:177px; z-index:1;">
+    <p><a href="clubs/clubs.html" target="_self"><b><font color="blue"><span style="font-size:14pt;">Les Clubs</span></font></b>
+</a></div>
+<div id="layer35" style="width:225px; height:28px; position:absolute; left:79px; top:398px; z-index:1;">
+    <p><font size="4"><b><a href="commun/autour.htm" target="_self">Autour de la pratique</a></b></font></p>
+</div>
+<div id="layer13" style="width:177px; height:25px; position:absolute; left:984px; top:410px; z-index:1;">
+    <p align="right"><b><font color="blue"><span style="font-size:14pt;"><a href="commun/liens.html" target="_self">Les liens utile</a><a href="javascript:na_open_window('win', 'commun/liens.html', 0, 0, 300, 200, 0, 0, 0, 0, 0)" target="_self">s</a></span></font></b>
+</div>
+<div id="layer8" style="width:154px; height:47px; position:absolute; left:78px; top:244px; z-index:1;">
+    <p><b><font color="blue"><span style="font-size:14pt;"><a href="docum/docum.html" target="_self">Documentation</a></span></font></b>
+</div>
+<div id="layer6" style="width:106px; height:47px; position:absolute; left:1050px; top:327px; z-index:1;">
+    <p align="right"><b><font color="blue"><span style="font-size:14pt;"><a href="commun/actu.htm" target="_self">Actualités</a></span></font></b>
+</div>
+<div id="layer15" style="width:188px; height:46px; position:absolute; left:76px; top:322px; z-index:1;">
+    <p><a href="news/retro.html" target="_self"><b><font color="blue"><span style="font-size:14pt;">Retrospective</span></font></b>
+</a></div>
+<div id="layer11" style="width:146px; height:46px; position:absolute; left:1007px; top:250px; z-index:1;">
+    <p align="right"><b><font size="4"><a href="technic/commissions.htm" target="_self">Commissions</a></font></b>
+</div>
+<div id="layer12" style="width:133px; height:41px; position:absolute; left:1021px; top:478px; z-index:1;">
+    <p align="right"><b><font color="blue"><span style="font-size:14pt;"><a href="sante/sante.html">Page Santé</a></span></font></b>
+</div>
+<div id="layer29" style="width:280px; height:25px; position:absolute; left:48px; top:542px; z-index:1;">
+    <p align="center"><span style="font-size:10pt;"><b>O Sensei &nbsp;&nbsp;Moriheï Ueshiba</b></span>
+</div>
+<div id="layer22" style="width:206px; height:25px; position:absolute; left:944px; top:539px; z-index:1;">
+    <p align="center"><span style="font-size:10pt;"><b>Tamura Nobuyoshi Shihan</b></span>
+</div>
+<div id="layer7" style="border-width:3; border-color:navy; border-style:outset; width:205px; height:46px; position:absolute; left:510px; top:153px; z-index:1;">
+    <p align="center"><a href="javascript:na_open_window('win', 'commun/calendrier.html', 0, 0, 300, 200, 0, 0, 0, 0, 1)" target="_self"><b><font color="blue"><span style="font-size:14pt;">Le Calendrier</span></font></b>
+</a></div>
+<div id="layer30" style="width:191px; height:43px; position:absolute; left:77px; top:467px; z-index:1;">
+    <p><font size="4" color="blue"><b><a href="commun/inmemoriam.htm" target="_self">In Memoriam</a></b></font><a href="commun/inmemoriam.htm">
+</a></div>
+<div id="layer31" style="width:262px; height:119px; position:absolute; left:573px; top:500px; z-index:1;">
+    <p>&nbsp;
+    
+    
+    <p><a href="https://www.yellis.net" target="_blank"> <img src="https://www.yellis.net/outils/compteur/compteur.php?id_client=comite&type=2"
+alt="Compteur graphique." border="0"></a> <font face="Hokusai"><span style="font-size:16pt;">Visiteurs</span></font>
+</div>
+<div id="layer32" style="border-width:6; border-color:silver; border-style:inset; width:699px; height:324px; position:absolute; left:296px; top:204px; z-index:1;">
+<div id="marqueechildlayer0" style="position:absolute; left:0; top:0; width:100%; height:100%;" namo_marquee>
+        <div id="marqueechildlayer0" style="width:500; height:300; position:absolute; left:110; top:7; z-index:1;">
+            <marquee behavior="scroll" bgcolor="transparent" onMouseOut="this.start();" onMouseOver="this.stop();" loop="-1" scrolldelay="30" scrollamount="2" direction="up">    
+            <p><font color="purple"><b><u>21 août&nbsp;2011 - Mise à jour des pages : </u></b></font><u></u>
+</p>
+            <p><b><font color="red">* </font><u><font color="red">Actualités : Où pratiquer cet été ?</font></u></b></p>
+            <p class="Style13"> <b><font color="#D41F00"><span class="Style13">&nbsp;&nbsp;&nbsp;<u>PAGE ACTU : Communiqué de la DDCS</u></span></font></b></p>
+            <p><b><font color="#AA0055"><tt> </tt></font></b></p>
+            <p><font color="purple">* </font><font face="Times New Roman" color="#AA0055"><b>Clubs </b></font><font face="Times New Roman" color="#AA0055"><b>: Clouange.</b></font></p>
+        
+
+
+
+
+
+
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+    
+    
+        
+
+
+        
+
+
+
+
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+
+</html>

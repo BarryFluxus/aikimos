@@ -1,0 +1,376 @@
+<html>
+<head>
+<style type="text/css">
+background-repeat: no-repeat;background-position: center</style>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>Comité de Moselle d'Aïkido </title>
+<meta name="generator" content="Namo WebEditor">
+<script language="JavaScript">
+<!--
+function namosw_init_marquee(layername1, layername2, dir, scrollamount, scrolldelay, behavior, loop, cliplen, length, height) 
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+
+  var layer1, layer2;
+
+  if (layername1 == '' || layername2 == '')
+    return;
+
+  if (is_ns4) {
+    layer1 = document.layers[layername1];
+    if (!layer1)
+      return;
+    layer2 = document.layers[layername1].document.layers[layername2];
+  } else if (is_ns6) {
+    layer1 = document.getElementById(layername1);
+    layer2 = document.getElementById(layername2);
+  } else {
+    layer1 = document.all(layername1);
+    layer2 = document.all(layername2);
+  }
+
+  if (document.all) {
+    if (dir == 'l' || dir == 'r') {
+      layer1.style.clip = 'rect(auto ' + cliplen + ' auto 0)';
+      layer1.style.pixelWidth = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.pixelLeft = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.style.pixelLeft = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.style.clip = 'rect(0 auto ' + cliplen + ' auto)';
+      layer1.style.pixelHeight = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.pixelTop = (dir == 't') ? cliplen : -length;
+      else
+        layer2.style.pixelTop = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  } else if (is_ns4) {
+    if (dir == 'l' || dir == 'r') {    
+      layer1.clip.width  = cliplen;
+      layer1.clip.height = height;
+      if (behavior == 's' || behavior == 'l')
+        layer2.left = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.left = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.clip.height = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.top = (dir == 't') ? cliplen : -length;
+      else
+        layer2.top = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  } else if (is_ns6) {
+    if (dir == 'l' || dir == 'r') {    
+      layer1.style.clip = 'rect(auto ' + cliplen + ' auto 0)';
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.left = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.style.left = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.style.clip = 'rect(0 auto ' + cliplen + ' auto)';
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.top = (dir == 't') ? cliplen : -length;
+      else
+        layer2.style.top = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  }
+
+  layer1.m_layer    = layer2;
+  layer1.m_dir      = dir;
+  layer1.m_amount   = scrollamount;
+  layer1.m_delay    = scrolldelay;
+  layer1.m_behavior = behavior;
+  layer1.m_loop     = loop;
+  layer1.m_cliplen  = cliplen;
+  layer1.m_length   = length;
+
+  if (layer1.m_behavior == 'l') {
+    if (layer1.m_loop == -1)
+      layer1.m_loop = 1;
+  }
+
+  layer1.m_interval = setInterval("namosw_marquee_scroll('" + layername1 + "');", scrolldelay);
+}
+
+function namosw_marquee_scroll(layername) 
+{
+// local functions
+//
+function get_left(l)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if      (is_ns4) return l.left;
+  else if (is_ns6) return parseInt(l.style.left);
+  else             return l.style.pixelLeft;
+}
+
+function set_left(l, value)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4)       l.left = value;
+  else if (is_ns6)  l.style.left = value;
+  else              l.style.pixelLeft = value;
+}
+
+function get_top(l)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4)       return l.top;
+  else if (is_ns6)  return l.style.top;
+  else              return l.style.pixelTop;
+}
+
+function set_top(l, value)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4) 
+    l.top = value;
+  else if (is_ns6)
+    l.style.top = value
+  else
+    l.style.pixelTop = value;
+}
+// ------------------------
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  var layer, layer2;
+
+  if (is_ns4)      layer = document.layers[layername];
+  else if (is_ns6) layer = document.getElementById(layername);
+  else             layer = document.all[layername];
+
+  layer2 = layer.m_layer;
+
+  if (layer.m_behavior == 's') {			// scroll
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) >= -layer.m_length) {
+        set_left(layer2, get_left(layer2)-layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2) < layer.m_cliplen) {
+        set_left(layer2, get_left(layer2) + layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, -layer.m_length);
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) >= -layer.m_length) {
+        set_top(layer2, get_top(layer2) - layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2) < layer.m_cliplen) {
+        set_top(layer2, get_top(layer2) + layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, -layer.m_length);
+      }
+    }
+    if (layer.m_loop == 0)
+      clearInterval(layer.m_interval);
+  } else if (layer.m_behavior == 'a') {			// alternate
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) > Math.min(0, -layer.m_length+layer.m_cliplen)) {
+        set_left(layer2, get_left(layer2)-layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        layer.m_dir = 'r';
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2) < Math.max(0, -layer.m_length+layer.m_cliplen)) {
+        set_left(layer2, get_left(layer2)+layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	layer.m_dir = 'l';
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) > Math.min(0, -layer.m_length+layer.m_cliplen)) {
+        set_top(layer2, get_top(layer2) - layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        layer.m_dir = 'b';
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2) < Math.max(0, -layer.m_length+layer.m_cliplen)) {
+        set_top(layer2, get_top(layer2)+layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	layer.m_dir = 't';
+      }
+    }
+  } else if (layer.m_behavior == 'l') {			// slide
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) > 0) {
+        set_left(layer2, Math.max(0, get_left(layer2)-layer.m_amount));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	set_left(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2)+layer.m_length < layer.m_cliplen) {
+        set_left(layer2, Math.min(get_left(layer2)+layer.m_amount, layer.m_cliplen-layer.m_length));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, -layer.m_length);
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) > 0) {
+        set_top(layer2, Math.max(0, get_top(layer2) - layer.m_amount));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2)+layer.m_length < layer.m_cliplen) {
+        set_top(layer2, Math.min(get_top(layer2)+layer.m_amount, layer.m_cliplen-layer.m_length));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, -layer.m_length);
+      }
+    }
+    if (layer.m_loop == 0)
+      clearInterval(layer.m_interval);
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body "width:100%; bgcolor="white" text="black" link="blue" vlink="purple" alink="red" background="images/336-4.jpg" background-repeat="no-repeat" background-position="centre" OnLoad="namosw_init_marquee('layer32', 'marqueechildlayer0', 't', 10, 100, 's', -1, 324, 324, 699);">
+<p align="center"><images/336-4.jpg></p>
+<div id="layer33" style="width:129px; height:46px; position:absolute; left:1136px; top:186px; z-index:1;">
+    <p align="right"><b><a href="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/commun/comite.html"><font color="blue"><span style="font-size:14pt;">Le Comité</span></font></a></b>
+</div>
+&nbsp;<div id="layer33" style="width:69px; height:60px; position:absolute; left:31px; top:169px; z-index:1; background-color:transparent;">
+    <p><img src="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/religion-ying_yang-12[1].gif" width="60" height="60" border="0"></div>
+<div id="layer2" style="width:196px; height:94px; position:absolute; left:1152px; top:20px; z-index:1;">
+    <p><img src="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/FFABnew.jpg" width="187" height="94" border="0">
+</div>
+<div id="layer1" style="width:825px; height:70px; position:absolute; left:270px; top:19px; z-index:1;">
+    <p align="center"><b><font face="Kozuka Gothic Pro M" color="#AA0055"><span style="font-size:20pt;">Comité départemental d'Aïkido de Moselle</span></font></b>    <p align="center"><b><font face="Kozuka Gothic Pro M" color="#AA0055"><span style="font-size:20pt;">Aïkikaï de France</span></font></b>
+</div>
+<div id="layer20" style="width:94px; height:113px; position:absolute; left:32px; top:18px; z-index:1;">
+    <p><a href="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/Photos/moselle.jpg"><img src="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/Photos/moselle.jpg" width="85" height="105" border="0"></a>
+</div>
+<div id="layer3" style="width:74px; height:65px; position:absolute; left:27px; top:317px; z-index:1;">
+    <p><img src="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/y&y2.jpg" width="60" height="60" border="0"></div>
+<div id="layer21" style="width:74px; height:65px; position:absolute; left:27px; top:248px; z-index:1;">
+    <p><img src="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/religion-ying_yang-12[1].gif" width="60" height="60" border="0">
+</div>
+<div id="layer23" style="width:74px; height:65px; position:absolute; left:27px; top:388px; z-index:1;">
+    <p><img src="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/y&y2.jpg" width="60" height="60" border="0">
+</div>
+<div id="layer24" style="width:74px; height:65px; position:absolute; left:1288px; top:174px; z-index:1;">
+    <p><img src="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/y&y2.jpg" width="60" height="60" border="0"></div>
+<div id="layer25" style="width:69px; height:60px; position:absolute; left:1286px; top:249px; z-index:1;">
+    <p><img src="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/religion-ying_yang-12[1].gif" width="60" height="60" border="0">
+</div>
+<div id="layer26" style="width:69px; height:60px; position:absolute; left:1286px; top:323px; z-index:1;">
+    <p><img src="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/religion-ying_yang-12[1].gif" width="60" height="60" border="0">
+</div>
+<div id="layer27" style="width:74px; height:65px; position:absolute; left:1286px; top:393px; z-index:1;">
+    <p><img src="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/y&y2.jpg" width="60" height="60" border="0"></div>
+<div id="layer28" style="width:74px; height:65px; position:absolute; left:1287px; top:465px; z-index:1;">
+    <p><img src="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/y&y2.jpg" width="60" height="60" border="0"></div>
+<div id="layer20" style="width:70px; height:65px; position:absolute; left:30px; top:462px; z-index:1;">
+    <p><img src="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/images/y&y2.jpg" width="60" height="60" border="0"></div>
+<div id="layer5" style="width:158px; height:47px; position:absolute; left:106px; top:183px; z-index:1;">
+    <p><b><a href="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/clubs/clubs.html"><font color="blue"><span style="font-size:14pt;">Les Clubs</span></font></a></b>
+</div>
+<div id="layer4" style="width:242px; height:25px; position:absolute; left:100px; top:406px; z-index:1;">
+    <p><b><font color="blue"><span style="font-size:14pt;"><a href="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/commun/autour.htm">Autour de la pratique</a></span></font></b>
+</div>
+<div id="layer13" style="width:177px; height:25px; position:absolute; left:1089px; top:414px; z-index:1;">
+    <p align="right"><b><a href="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/commun/liens.html"><font color="blue"><span style="font-size:14pt;">Les liens utiles</span></font></a></b>
+</div>
+<div id="layer8" style="width:163px; height:47px; position:absolute; left:105px; top:262px; z-index:1;">
+    <p><b><a href="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/docum/docum.html"><font color="blue"><span style="font-size:14pt;">Documentation</span></font></a></b>
+</div>
+<div id="layer6" style="width:106px; height:47px; position:absolute; left:1160px; top:332px; z-index:1;">
+    <p align="right"><b><a href="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/commun/actu.htm"><font color="blue"><span style="font-size:14pt;">Actualités</span></font></a></b>
+</div>
+<div id="layer15" style="width:197px; height:46px; position:absolute; left:101px; top:333px; z-index:1;">
+    <p><b><a href="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/news/retro.html"><font color="blue"><span style="font-size:14pt;">Retrospective</span></font></a></b>
+</div>
+<div id="layer11" style="width:129px; height:46px; position:absolute; left:1136px; top:262px; z-index:1;">
+    <p align="right"><a href="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/technic/commissions.htm"><b>Commissions</b></a>
+</div>
+<div id="layer12" style="width:133px; height:54px; position:absolute; left:1136px; top:476px; z-index:1;">
+    <p align="right"><b><a href="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/sante/sante.html"><font color="blue"><span style="font-size:14pt;">Page Santé</span></font></a></b>
+</div>
+<div id="layer29" style="width:280px; height:25px; position:absolute; left:47px; top:555px; z-index:1;">
+    <p align="center"><span style="font-size:10pt;"><b>O Sensei &nbsp;&nbsp;Moriheï Ueshiba</b></span>
+</div>
+<div id="layer22" style="width:206px; height:25px; position:absolute; left:1131px; top:567px; z-index:1;">
+    <p align="center"><span style="font-size:10pt;"><b>Tamura Nobuyoshi Shihan</b></span>
+</div>
+<div id="layer7" style="border-width:3; border-color:navy; border-style:outset; width:205px; height:46px; position:absolute; left:590px; top:158px; z-index:1;">
+    <p align="center"><b><a href="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/commun/calendrier.html"><font color="blue"><span style="font-size:14pt;">Le Calendrier</span></font></a></b>
+</div>
+<div id="layer30" style="width:200px; height:43px; position:absolute; left:103px; top:477px; z-index:1;">
+    <p><font size="4" color="blue"><a href="file:///C|/Documents%20and%20Settings/Philippe/Mes%20documents/Sites%20web/Site%20Comité/aikido-moselle.net/commun/inmemoriam.htm"><b>In Memoriam</b></a></font>
+</div>
+<div id="layer31" style="width:262px; height:119px; position:absolute; left:586px; top:523px; z-index:1;">
+    <p>&nbsp;
+    <p><a href="https://www.yellis.net" target="_blank"> <img src="https://www.yellis.net/outils/compteur/compteur.php?id_client=comite&type=2"
+alt="Compteur graphique." border="0"></a> <font face="Hokusai"><span style="font-size:16pt;">Visiteurs</span></font>
+</div>
+<div id="layer32" style="border-width:6; border-color:silver; border-style:inset; width:699px; height:324px; position:absolute; left:354px; top:219px; z-index:1;">
+<div id="marqueechildlayer0" style="position:absolute; left:0; top:0; width:100%; height:100%;" namo_marquee>
+        <div id="marqueechildlayer0" style="width:500; height:300; position:absolute; left:121; top:65; z-index:1;">
+            <marquee behavior="scroll" bgcolor="transparent" onMouseOut="this.start();" onMouseOver="this.stop();" loop="-1" scrolldelay="30" scrollamount="2" direction="up">    
+        <p><font color="purple"><b><u>19 juin 2011 - Mise à jour des pages : </u></b></font><u></u>
+</p>
+        <p><b><font color="red">* </font><u><font color="red">Actualités : Où pratiquer cet été ?</font></u></b></p>
+        <p><b><font color="#AA0055"><tt> </tt></font></b></p>
+        <p><font color="purple">* </font><font face="Times New Roman" color="#AA0055"><b>Commissions : </b></font></p>
+        <p><font face="Times New Roman" color="#AA0055"><b>Commission technique &quot;Stages passés&quot; - Stage Gilbert Milliat - Amnéville.</b></font></p>
+        <p><font face="Times New Roman" color="#AA0055"><b>Commission Jeunes : Stage du 22 mai à Porcelette + Stage national du 18 au 25 juillet à Vittel.</b></font></p>
+        <p><font face="Times New Roman" color="#AA0055"><b>* Pages des clubs :&nbsp;Amnéville, Clouange, Porcelette, Semecourt, Budokaï Metz Arènes.</b></font></p>
+        <p><b>* <font color="#AA0055">Documentation : lettre de la DDCS au sujet de l'accompagnement éducatif cycle 2011 -2012</font></marquee>
+</b></p>
+            <p>
+</p>
+        
+
+
+
+
+
+
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+    </div>
+</div>
+</div>

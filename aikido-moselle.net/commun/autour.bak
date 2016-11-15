@@ -1,0 +1,281 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>Sans titre</title>
+<meta name="generator" content="Namo WebEditor">
+<script language="JavaScript">
+<!--
+function namosw_init_marquee(layername1, layername2, dir, scrollamount, scrolldelay, behavior, loop, cliplen, length, height) 
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+
+  var layer1, layer2;
+
+  if (layername1 == '' || layername2 == '')
+    return;
+
+  if (is_ns4) {
+    layer1 = document.layers[layername1];
+    if (!layer1)
+      return;
+    layer2 = document.layers[layername1].document.layers[layername2];
+  } else if (is_ns6) {
+    layer1 = document.getElementById(layername1);
+    layer2 = document.getElementById(layername2);
+  } else {
+    layer1 = document.all(layername1);
+    layer2 = document.all(layername2);
+  }
+
+  if (document.all) {
+    if (dir == 'l' || dir == 'r') {
+      layer1.style.clip = 'rect(auto ' + cliplen + ' auto 0)';
+      layer1.style.pixelWidth = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.pixelLeft = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.style.pixelLeft = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.style.clip = 'rect(0 auto ' + cliplen + ' auto)';
+      layer1.style.pixelHeight = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.pixelTop = (dir == 't') ? cliplen : -length;
+      else
+        layer2.style.pixelTop = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  } else if (is_ns4) {
+    if (dir == 'l' || dir == 'r') {    
+      layer1.clip.width  = cliplen;
+      layer1.clip.height = height;
+      if (behavior == 's' || behavior == 'l')
+        layer2.left = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.left = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.clip.height = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.top = (dir == 't') ? cliplen : -length;
+      else
+        layer2.top = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  } else if (is_ns6) {
+    if (dir == 'l' || dir == 'r') {    
+      layer1.style.clip = 'rect(auto ' + cliplen + ' auto 0)';
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.left = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.style.left = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.style.clip = 'rect(0 auto ' + cliplen + ' auto)';
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.top = (dir == 't') ? cliplen : -length;
+      else
+        layer2.style.top = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  }
+
+  layer1.m_layer    = layer2;
+  layer1.m_dir      = dir;
+  layer1.m_amount   = scrollamount;
+  layer1.m_delay    = scrolldelay;
+  layer1.m_behavior = behavior;
+  layer1.m_loop     = loop;
+  layer1.m_cliplen  = cliplen;
+  layer1.m_length   = length;
+
+  if (layer1.m_behavior == 'l') {
+    if (layer1.m_loop == -1)
+      layer1.m_loop = 1;
+  }
+
+  layer1.m_interval = setInterval("namosw_marquee_scroll('" + layername1 + "');", scrolldelay);
+}
+
+function namosw_marquee_scroll(layername) 
+{
+// local functions
+//
+function get_left(l)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if      (is_ns4) return l.left;
+  else if (is_ns6) return parseInt(l.style.left);
+  else             return l.style.pixelLeft;
+}
+
+function set_left(l, value)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4)       l.left = value;
+  else if (is_ns6)  l.style.left = value;
+  else              l.style.pixelLeft = value;
+}
+
+function get_top(l)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4)       return l.top;
+  else if (is_ns6)  return l.style.top;
+  else              return l.style.pixelTop;
+}
+
+function set_top(l, value)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4) 
+    l.top = value;
+  else if (is_ns6)
+    l.style.top = value
+  else
+    l.style.pixelTop = value;
+}
+// ------------------------
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  var layer, layer2;
+
+  if (is_ns4)      layer = document.layers[layername];
+  else if (is_ns6) layer = document.getElementById(layername);
+  else             layer = document.all[layername];
+
+  layer2 = layer.m_layer;
+
+  if (layer.m_behavior == 's') {			// scroll
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) >= -layer.m_length) {
+        set_left(layer2, get_left(layer2)-layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2) < layer.m_cliplen) {
+        set_left(layer2, get_left(layer2) + layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, -layer.m_length);
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) >= -layer.m_length) {
+        set_top(layer2, get_top(layer2) - layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2) < layer.m_cliplen) {
+        set_top(layer2, get_top(layer2) + layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, -layer.m_length);
+      }
+    }
+    if (layer.m_loop == 0)
+      clearInterval(layer.m_interval);
+  } else if (layer.m_behavior == 'a') {			// alternate
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) > Math.min(0, -layer.m_length+layer.m_cliplen)) {
+        set_left(layer2, get_left(layer2)-layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        layer.m_dir = 'r';
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2) < Math.max(0, -layer.m_length+layer.m_cliplen)) {
+        set_left(layer2, get_left(layer2)+layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	layer.m_dir = 'l';
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) > Math.min(0, -layer.m_length+layer.m_cliplen)) {
+        set_top(layer2, get_top(layer2) - layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        layer.m_dir = 'b';
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2) < Math.max(0, -layer.m_length+layer.m_cliplen)) {
+        set_top(layer2, get_top(layer2)+layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	layer.m_dir = 't';
+      }
+    }
+  } else if (layer.m_behavior == 'l') {			// slide
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) > 0) {
+        set_left(layer2, Math.max(0, get_left(layer2)-layer.m_amount));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	set_left(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2)+layer.m_length < layer.m_cliplen) {
+        set_left(layer2, Math.min(get_left(layer2)+layer.m_amount, layer.m_cliplen-layer.m_length));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, -layer.m_length);
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) > 0) {
+        set_top(layer2, Math.max(0, get_top(layer2) - layer.m_amount));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2)+layer.m_length < layer.m_cliplen) {
+        set_top(layer2, Math.min(get_top(layer2)+layer.m_amount, layer.m_cliplen-layer.m_length));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, -layer.m_length);
+      }
+    }
+    if (layer.m_loop == 0)
+      clearInterval(layer.m_interval);
+  }
+}
+
+// -->
+</script></head>
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red" OnLoad="namosw_init_marquee('layer6', 'marqueechildlayer0', 'l', 10, 100, 's', -1, 1125, 1125, 1125);">
+<div id="layer6" style="width:1125px; height:58px; position:absolute; left:96px; top:327px; z-index:1;">
+<div id="marqueechildlayer0" style="position:absolute; left:0; top:0; width:100%; height:100%;" namo_marquee>
+    <p><span style="font-size:20pt;"><font face="Saki Script" color="red">ATTENTION : Rencontre le lundi 28 novembre 2011 au dojo de Remilly</font></span></p>
+</div>
+</div>
+<p>
+<div id="layer1" style="width:871px; height:111px; position:absolute; left:158px; top:21px; z-index:1;">
+    <p align="center"><span style="font-size:48pt;"><font face="Hokusai">Autour de la Pratique</font></span></p>
+</div>
+<div id="layer2" style="width:80px; height:71px; position:absolute; left:155px; top:202px; z-index:1;">
+    <p><img src="../images/cercleiaido.jpg" width="71" height="71" border="0"></p>
+</div>
+</p>
+<div id="layer3" style="width:234px; height:40px; position:absolute; left:256px; top:222px; z-index:1;">
+    <p><font face="Saki Script"><span style="font-size:24pt;"><a href="cercle.htm">Le cercle de Iaido</a></span></font></p>
+</div>
+<div id="layer4" style="width:389px; height:29px; position:absolute; left:784px; top:223px; z-index:1;">
+    <p><a href="http://www.cercledeiaido.com/">lien vers le site du Cerle de Iaido</a></p>
+</div>
+<div id="layer5" style="width:91px; height:79px; position:absolute; left:680px; top:199px; z-index:1;">
+    <p><img src="../images/cercle2.jpg" width="82" height="79" border="0"></p>
+</div>
+<p>&nbsp;</p>
+</body>
+
+</html>

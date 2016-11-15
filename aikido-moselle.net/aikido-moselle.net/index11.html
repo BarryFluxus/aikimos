@@ -1,0 +1,334 @@
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>Sans titre</title>
+<meta name="generator" content="Namo WebEditor">
+<script language="JavaScript">
+<!--
+function namosw_init_marquee(layername1, layername2, dir, scrollamount, scrolldelay, behavior, loop, cliplen, length, height) 
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+
+  var layer1, layer2;
+
+  if (layername1 == '' || layername2 == '')
+    return;
+
+  if (is_ns4) {
+    layer1 = document.layers[layername1];
+    if (!layer1)
+      return;
+    layer2 = document.layers[layername1].document.layers[layername2];
+  } else if (is_ns6) {
+    layer1 = document.getElementById(layername1);
+    layer2 = document.getElementById(layername2);
+  } else {
+    layer1 = document.all(layername1);
+    layer2 = document.all(layername2);
+  }
+
+  if (document.all) {
+    if (dir == 'l' || dir == 'r') {
+      layer1.style.clip = 'rect(auto ' + cliplen + ' auto 0)';
+      layer1.style.pixelWidth = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.pixelLeft = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.style.pixelLeft = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.style.clip = 'rect(0 auto ' + cliplen + ' auto)';
+      layer1.style.pixelHeight = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.pixelTop = (dir == 't') ? cliplen : -length;
+      else
+        layer2.style.pixelTop = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  } else if (is_ns4) {
+    if (dir == 'l' || dir == 'r') {    
+      layer1.clip.width  = cliplen;
+      layer1.clip.height = height;
+      if (behavior == 's' || behavior == 'l')
+        layer2.left = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.left = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.clip.height = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.top = (dir == 't') ? cliplen : -length;
+      else
+        layer2.top = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  } else if (is_ns6) {
+    if (dir == 'l' || dir == 'r') {    
+      layer1.style.clip = 'rect(auto ' + cliplen + ' auto 0)';
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.left = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.style.left = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.style.clip = 'rect(0 auto ' + cliplen + ' auto)';
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.top = (dir == 't') ? cliplen : -length;
+      else
+        layer2.style.top = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  }
+
+  layer1.m_layer    = layer2;
+  layer1.m_dir      = dir;
+  layer1.m_amount   = scrollamount;
+  layer1.m_delay    = scrolldelay;
+  layer1.m_behavior = behavior;
+  layer1.m_loop     = loop;
+  layer1.m_cliplen  = cliplen;
+  layer1.m_length   = length;
+
+  if (layer1.m_behavior == 'l') {
+    if (layer1.m_loop == -1)
+      layer1.m_loop = 1;
+  }
+
+  layer1.m_interval = setInterval("namosw_marquee_scroll('" + layername1 + "');", scrolldelay);
+}
+
+function namosw_marquee_scroll(layername) 
+{
+// local functions
+//
+function get_left(l)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if      (is_ns4) return l.left;
+  else if (is_ns6) return parseInt(l.style.left);
+  else             return l.style.pixelLeft;
+}
+
+function set_left(l, value)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4)       l.left = value;
+  else if (is_ns6)  l.style.left = value;
+  else              l.style.pixelLeft = value;
+}
+
+function get_top(l)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4)       return l.top;
+  else if (is_ns6)  return l.style.top;
+  else              return l.style.pixelTop;
+}
+
+function set_top(l, value)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4) 
+    l.top = value;
+  else if (is_ns6)
+    l.style.top = value
+  else
+    l.style.pixelTop = value;
+}
+// ------------------------
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  var layer, layer2;
+
+  if (is_ns4)      layer = document.layers[layername];
+  else if (is_ns6) layer = document.getElementById(layername);
+  else             layer = document.all[layername];
+
+  layer2 = layer.m_layer;
+
+  if (layer.m_behavior == 's') {			// scroll
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) >= -layer.m_length) {
+        set_left(layer2, get_left(layer2)-layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2) < layer.m_cliplen) {
+        set_left(layer2, get_left(layer2) + layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, -layer.m_length);
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) >= -layer.m_length) {
+        set_top(layer2, get_top(layer2) - layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2) < layer.m_cliplen) {
+        set_top(layer2, get_top(layer2) + layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, -layer.m_length);
+      }
+    }
+    if (layer.m_loop == 0)
+      clearInterval(layer.m_interval);
+  } else if (layer.m_behavior == 'a') {			// alternate
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) > Math.min(0, -layer.m_length+layer.m_cliplen)) {
+        set_left(layer2, get_left(layer2)-layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        layer.m_dir = 'r';
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2) < Math.max(0, -layer.m_length+layer.m_cliplen)) {
+        set_left(layer2, get_left(layer2)+layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	layer.m_dir = 'l';
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) > Math.min(0, -layer.m_length+layer.m_cliplen)) {
+        set_top(layer2, get_top(layer2) - layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        layer.m_dir = 'b';
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2) < Math.max(0, -layer.m_length+layer.m_cliplen)) {
+        set_top(layer2, get_top(layer2)+layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	layer.m_dir = 't';
+      }
+    }
+  } else if (layer.m_behavior == 'l') {			// slide
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) > 0) {
+        set_left(layer2, Math.max(0, get_left(layer2)-layer.m_amount));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	set_left(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2)+layer.m_length < layer.m_cliplen) {
+        set_left(layer2, Math.min(get_left(layer2)+layer.m_amount, layer.m_cliplen-layer.m_length));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, -layer.m_length);
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) > 0) {
+        set_top(layer2, Math.max(0, get_top(layer2) - layer.m_amount));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2)+layer.m_length < layer.m_cliplen) {
+        set_top(layer2, Math.min(get_top(layer2)+layer.m_amount, layer.m_cliplen-layer.m_length));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, -layer.m_length);
+      }
+    }
+    if (layer.m_loop == 0)
+      clearInterval(layer.m_interval);
+  }
+}
+
+// -->
+</script></head>
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red" background="Photos/SumiEsamourai.jpg" OnLoad="namosw_init_marquee('layer18', 'marqueechildlayer0', 'l', 10, 100, 's', -1, 906, 996, 996);">
+<div id="layer1" style="width:720px; height:70px; position:absolute; left:265px; top:33px; z-index:1;">
+    <p align="center"><b><font face="Harrington" color="blue"><span style="font-size:20pt;">Comité départemental d'Aïkido de Moselle</span></font></b><b><font face="Harrington" color="blue"><span style="font-size:20pt;"></span></font></b></p>
+    <p align="center"><b><font face="Harrington" color="blue"><span style="font-size:20pt;">Aïkikaï de France</span></font></b></p>
+</div>
+<div id="layer3" style="width:108px; height:166px; position:absolute; left:844px; top:240px; z-index:1;">
+    <p><img src="aikido-moselle.net/images/Photos/tamura mod.jpg" width="99" height="147" border="0"></p>
+</div>
+<div id="layer2" style="width:122px; height:152px; position:absolute; left:256px; top:233px; z-index:1;">
+    <p><img src="aikido-moselle.net/images/Photos/osensei2.jpg" width="113" height="133" border="0"></p>
+</div>
+<div id="layer5" style="width:88px; height:25px; position:absolute; left:137px; top:187px; z-index:1;">
+    <p><b><font color="blue"><a href="../Site Comité 2/aikido-moselle.net/clubs/clubs.html">Les Clubs</a></font></b></p>
+</div>
+<div id="layer6" style="width:81px; height:25px; position:absolute; left:95px; top:295px; z-index:1;">
+    <p><font color="blue"><b>Actualité</b></font></p>
+</div>
+<div id="layer7" style="width:127px; height:46px; position:absolute; left:551px; top:178px; z-index:1;">
+    <p><b><font color="blue"><a href="../Site Comité 2/aikido-moselle.net/commun/calendrier.html">Le Calendrier</a></font></b></p>
+</div>
+<div id="layer8" style="width:136px; height:46px; position:absolute; left:36px; top:359px; z-index:1;">
+    <p><b><font color="blue"><a href="../Site Comité 2/aikido-moselle.net/docum/docum.html">Documentation</a></font></b></p>
+</div>
+<div id="layer9" style="width:188px; height:25px; position:absolute; left:1119px; top:318px; z-index:1;">
+    <p><font color="blue"><a href="../Site Comité 2/aikido-moselle.net/jeunes/jeunes.html"><b>Les moins de 14 ans</b></a></font></p>
+</div>
+<div id="layer10" style="width:202px; height:46px; position:absolute; left:1104px; top:376px; z-index:1;">
+    <p><b><font color="blue"><a href="../Site Comité 2/aikido-moselle.net/technic/technic.html">Comissions Techniques</a></font></b></p>
+</div>
+<div id="layer11" style="width:97px; height:46px; position:absolute; left:1049px; top:197px; z-index:1;">
+    <p><b><font color="blue"><a href="aikido-moselle.net/commun/comite.html">Le Comité</a></font></b></p>
+</div>
+<div id="layer12" style="width:103px; height:46px; position:absolute; left:1073px; top:436px; z-index:1;">
+    <p><b><font color="blue"><a href="../Site Comité 2/aikido-moselle.net/sante/sante.html">Page Santé</a></font></b></p>
+</div>
+<div id="layer13" style="width:128px; height:25px; position:absolute; left:40px; top:427px; z-index:1;">
+    <p><b><font color="blue"><a href="../Site Comité 2/aikido-moselle.net/commun/liens.html">Les liens utiles</a></font></b></p>
+</div>
+<div id="layer14" style="width:98px; height:25px; position:absolute; left:1043px; top:496px; z-index:1;">
+    <p><font color="blue"><b><a href="../Site Comité 2/aikido-moselle.net/commun/contact.html">Messagerie</a></b></font></p>
+</div>
+<div id="layer15" style="width:127px; height:46px; position:absolute; left:79px; top:491px; z-index:1;">
+    <p><font color="blue"><b><a href="aikido-moselle.net/news/retro.html">Retrospective</a></b></font></p>
+</div>
+<div id="layer16" style="width:165px; height:25px; position:absolute; left:1095px; top:258px; z-index:1;">
+    <p><font color="blue"><b>Les plus de 14 ans</b></font></p>
+</div>
+<div id="layer17" style="width:159px; height:156px; position:absolute; left:30px; top:14px; z-index:1;">
+    <p align="left"><img src="aikido-moselle.net/images/Photos/logo_ffab_transparent.gif" width="150" height="137" border="0"></p>
+</div>
+<div id="layer18" style="width:996px; height:28px; position:absolute; left:119px; top:546px; z-index:1;">
+<div id="marqueechildlayer0" style="position:absolute; left:0; top:0; width:100%; height:100%;" namo_marquee>
+        <p><b><font color="red"><span style="font-size:12pt;">Dimanche 16 janvier 2011, séminaire Ados à Vigy, journée complète. Renseignez-vous dans vos clubs.</span></font></b></p>
+</div>
+</div>
+<div id="layer19" style="border-width:1; border-color:rgb(42,0,255); border-style:groove; width:374px; height:255px; position:absolute; left:424px; top:251px; z-index:1;">
+    <p align="center"><font color="purple"><b>****</b></font></p>
+    <p align="center"><font color="purple"><b>29/10/2010 - Mise à jour des pages : </b></font></p>
+    <p align="center"><font color="purple"><b>&nbsp;* Rétrospective </b></font></p>
+    <p align="center"><font color="purple"><b>* Comité</b></font></p>
+    <p align="center"><font color="purple"><b>&nbsp;&nbsp;* Calendrier</b></font></p>
+    <p align="center"><font color="purple"><b>****</b></font></p>
+</div>
+<div id="layer20" style="width:106px; height:139px; position:absolute; left:1089px; top:20px; z-index:1;">
+    <p><img src="aikido-moselle.net/images/Photos/moselle.jpg" width="97" height="120" border="0"></p>
+</div>
+<div id="layer21" style="width:179px; height:25px; position:absolute; left:223px; top:393px; z-index:1;">
+    <p align="center"><span style="font-size:10pt;"><b>O Sensei </b></span></p>
+    <p align="center"><span style="font-size:10pt;"><b>Moriheï Ueshiba</b></span></p>
+</div>
+<div id="layer22" style="width:206px; height:25px; position:absolute; left:824px; top:389px; z-index:1;">
+    <p><span style="font-size:10pt;"><b>Tamura Nobuyoshi Shihan</b></span></p>
+</div>
+<div id="layer4" style="width:177px; height:25px; position:absolute; left:22px; top:252px; z-index:1;">
+    <p><font color="blue">Autour de la pratique</font></p>
+</div>
+<p>&nbsp;</p>
+</body>
+
+</html>

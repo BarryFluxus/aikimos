@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+</HEAD>
+<BODY LINK="404040" VLINK="999999" BACKGROUND="bgblancjoli.gif">
+<P> 
+<div align="center"> 
+  <p></P>
+  <FONT FACE="Lucida Sans Unicode" COLOR="#ff0000">
+  <H2><font face="Wonton ICG" size="7" color="#993366">LES DERNIERES NOUVELLES!</font></H2>
+  </font> 
+  
+  <div align="left">
+    <div align="center">
+      <div align="left">
+<table width="50%" border="3" height="300" align="center">
+          <tr> 
+            <td bgcolor="#CCFFFF" height="300" bordercolor="#993333"> 
+              <div align="center">
+                <script type="text/javascript">
+//specify path to your external page:
+var iframesrc="deroulant.html "
+
+//You may change most attributes of iframe tag below, such as width and height:
+document.write('<iframe id="datamain" src="'+iframesrc+'" width="500px" height="300px" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>')
+
+</script>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <p align="center">Pour arr&ecirc;ter le d&eacute;filement, pointez sur 
+          le texte</p>
+        
+      </div>
+    </div>
+  </div>
+</div><br>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-510963-1";
+urchinTracker();
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+
+<head>
+<title>Sans titre</title>
+<meta name="generator" content="Namo WebEditor">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"></head>
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red">
+<div id="layer1" style="width:200px; height:32px; position:absolute; left:46px; top:47px; z-index:1;">
+    <p>La Commission Jeunes</p>
+</div>
+<div id="layer2" style="width:159px; height:166px; position:absolute; left:63px; top:109px; z-index:1;">
+    <p><a href="../jeunes/jeunes.html"><img src="../images/yinyang1.jpg" width="150" height="147" border="0"></a></p>
+</div>
+<div id="layer3" style="width:200px; height:34px; position:absolute; left:303px; top:47px; z-index:1;">
+    <p>Le cercle de R&eacute;flexion</p>
+</div>
+<div id="layer4" style="width:202px; height:174px; position:absolute; left:304px; top:106px; z-index:1;">
+    <p><a href="../jeunes/CERCLE DE REFLEXION   Samedi 23 octobre 2010.pdf"><img src="../images/Ying_Yang_2.jpeg" width="193" height="155" border="0"></a></p>
+</div>
+<div id="layer5" style="width:243px; height:25px; position:absolute; left:892px; top:45px; z-index:1;">
+    <p>Les Commissions Techniques</p>
+</div>
+<div id="layer6" style="width:159px; height:166px; position:absolute; left:931px; top:101px; z-index:1;">
+    <p><a href="technic.html"><img src="../images/yinyang1.jpg" width="150" height="147" border="0"></a></p>
+</div>
+<div id="layer7" style="width:381px; height:27px; position:absolute; left:418px; top:421px; z-index:1;">
+    <p align="center"><font face="Hokusai">Cliquez sur les images pour acceder aux pages</font></p>
+</div>
+<div id="layer8" style="width:200px; height:39px; position:absolute; left:604px; top:47px; z-index:1;">
+    <p>La Commission Sant&eacute;</p>
+</div>
+<div id="layer9" style="width:200px; height:185px; position:absolute; left:605px; top:94px; z-index:1;">
+    <p align="center">&nbsp;</p>
+    <p align="center"><span style="font-size:48pt;"><a href="../sante/sante.html">健児</a></span></p>
+</div>
+<p>&nbsp;</p>
+</body>
+
+</html>

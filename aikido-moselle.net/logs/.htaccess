@@ -1,0 +1,7 @@
+AuthUserFile /home/www/users/1/c/o/m/comite/.passwd_log
+AuthName "Acces protege"
+AuthType Basic
+
+<LIMIT GET POST>
+Require valid-user
+</LIMIT>

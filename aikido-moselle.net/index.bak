@@ -1,0 +1,397 @@
+<html>
+	<head>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+	<title>Comité de Moselle d'Aïkido</title>
+	<meta name="generator" content="Namo WebEditor">
+<script language="JavaScript">
+<!--
+function namosw_init_marquee(layername1, layername2, dir, scrollamount, scrolldelay, behavior, loop, cliplen, length, height) 
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+
+  var layer1, layer2;
+
+  if (layername1 == '' || layername2 == '')
+    return;
+
+  if (is_ns4) {
+    layer1 = document.layers[layername1];
+    if (!layer1)
+      return;
+    layer2 = document.layers[layername1].document.layers[layername2];
+  } else if (is_ns6) {
+    layer1 = document.getElementById(layername1);
+    layer2 = document.getElementById(layername2);
+  } else {
+    layer1 = document.all(layername1);
+    layer2 = document.all(layername2);
+  }
+
+  if (document.all) {
+    if (dir == 'l' || dir == 'r') {
+      layer1.style.clip = 'rect(auto ' + cliplen + ' auto 0)';
+      layer1.style.pixelWidth = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.pixelLeft = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.style.pixelLeft = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.style.clip = 'rect(0 auto ' + cliplen + ' auto)';
+      layer1.style.pixelHeight = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.pixelTop = (dir == 't') ? cliplen : -length;
+      else
+        layer2.style.pixelTop = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  } else if (is_ns4) {
+    if (dir == 'l' || dir == 'r') {    
+      layer1.clip.width  = cliplen;
+      layer1.clip.height = height;
+      if (behavior == 's' || behavior == 'l')
+        layer2.left = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.left = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.clip.height = cliplen;
+      if (behavior == 's' || behavior == 'l')
+        layer2.top = (dir == 't') ? cliplen : -length;
+      else
+        layer2.top = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  } else if (is_ns6) {
+    if (dir == 'l' || dir == 'r') {    
+      layer1.style.clip = 'rect(auto ' + cliplen + ' auto 0)';
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.left = (dir == 'l') ? cliplen : -length;
+      else
+        layer2.style.left = (dir == 'l') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    } else if (dir == 't' || dir == 'b') {
+      layer1.style.clip = 'rect(0 auto ' + cliplen + ' auto)';
+      if (behavior == 's' || behavior == 'l')
+        layer2.style.top = (dir == 't') ? cliplen : -length;
+      else
+        layer2.style.top = (dir == 't') ? Math.max(0, -length+cliplen) : Math.min(0, -length+cliplen);
+    }
+  }
+
+  layer1.m_layer    = layer2;
+  layer1.m_dir      = dir;
+  layer1.m_amount   = scrollamount;
+  layer1.m_delay    = scrolldelay;
+  layer1.m_behavior = behavior;
+  layer1.m_loop     = loop;
+  layer1.m_cliplen  = cliplen;
+  layer1.m_length   = length;
+
+  if (layer1.m_behavior == 'l') {
+    if (layer1.m_loop == -1)
+      layer1.m_loop = 1;
+  }
+
+  layer1.m_interval = setInterval("namosw_marquee_scroll('" + layername1 + "');", scrolldelay);
+}
+
+function namosw_marquee_scroll(layername) 
+{
+// local functions
+//
+function get_left(l)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if      (is_ns4) return l.left;
+  else if (is_ns6) return parseInt(l.style.left);
+  else             return l.style.pixelLeft;
+}
+
+function set_left(l, value)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4)       l.left = value;
+  else if (is_ns6)  l.style.left = value;
+  else              l.style.pixelLeft = value;
+}
+
+function get_top(l)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4)       return l.top;
+  else if (is_ns6)  return l.style.top;
+  else              return l.style.pixelTop;
+}
+
+function set_top(l, value)
+{
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  if (is_ns4) 
+    l.top = value;
+  else if (is_ns6)
+    l.style.top = value
+  else
+    l.style.pixelTop = value;
+}
+// ------------------------
+  var is_ns4 = !document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+  var is_ns6 = document.getElementById && (navigator.appName.indexOf('Netscape', 0) != -1);
+
+  var layer, layer2;
+
+  if (is_ns4)      layer = document.layers[layername];
+  else if (is_ns6) layer = document.getElementById(layername);
+  else             layer = document.all[layername];
+
+  layer2 = layer.m_layer;
+
+  if (layer.m_behavior == 's') {			// scroll
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) >= -layer.m_length) {
+        set_left(layer2, get_left(layer2)-layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2) < layer.m_cliplen) {
+        set_left(layer2, get_left(layer2) + layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, -layer.m_length);
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) >= -layer.m_length) {
+        set_top(layer2, get_top(layer2) - layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2) < layer.m_cliplen) {
+        set_top(layer2, get_top(layer2) + layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, -layer.m_length);
+      }
+    }
+    if (layer.m_loop == 0)
+      clearInterval(layer.m_interval);
+  } else if (layer.m_behavior == 'a') {			// alternate
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) > Math.min(0, -layer.m_length+layer.m_cliplen)) {
+        set_left(layer2, get_left(layer2)-layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        layer.m_dir = 'r';
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2) < Math.max(0, -layer.m_length+layer.m_cliplen)) {
+        set_left(layer2, get_left(layer2)+layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	layer.m_dir = 'l';
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) > Math.min(0, -layer.m_length+layer.m_cliplen)) {
+        set_top(layer2, get_top(layer2) - layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        layer.m_dir = 'b';
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2) < Math.max(0, -layer.m_length+layer.m_cliplen)) {
+        set_top(layer2, get_top(layer2)+layer.m_amount);
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	layer.m_dir = 't';
+      }
+    }
+  } else if (layer.m_behavior == 'l') {			// slide
+    if (layer.m_dir == 'l') {
+      if (get_left(layer2) > 0) {
+        set_left(layer2, Math.max(0, get_left(layer2)-layer.m_amount));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+	set_left(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'r') {
+      if (get_left(layer2)+layer.m_length < layer.m_cliplen) {
+        set_left(layer2, Math.min(get_left(layer2)+layer.m_amount, layer.m_cliplen-layer.m_length));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_left(layer2, -layer.m_length);
+      }
+    } else if (layer.m_dir == 't') {
+      if (get_top(layer2) > 0) {
+        set_top(layer2, Math.max(0, get_top(layer2) - layer.m_amount));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, layer.m_cliplen);
+      }
+    } else if (layer.m_dir == 'b') {
+      if (get_top(layer2)+layer.m_length < layer.m_cliplen) {
+        set_top(layer2, Math.min(get_top(layer2)+layer.m_amount, layer.m_cliplen-layer.m_length));
+      } else {
+        if (layer.m_loop > 0) layer.m_loop--;
+        set_top(layer2, -layer.m_length);
+      }
+    }
+    if (layer.m_loop == 0)
+      clearInterval(layer.m_interval);
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red" OnLoad="namosw_init_marquee('layer1', 'marqueechildlayer0', 'l', 3, 100, 's', -1, 1634, 1634, 1634);">
+<table width="98%" height="729" cellpadding="0" cellspacing="0" bordercolordark="white" bordercolorlight="black">
+    <tr>
+        <td width="259" height="115" colspan="2">
+            <p align="center">&nbsp;</p>
+            <p align="center"><img src="images/saison 2015-2016/logo moselle 2015.png" width="118" height="118" border="0"></p>
+            <p align="center">&nbsp;</p>
+        </td>
+        <td width="1074" height="115" colspan="2">
+            <p align="center"><span style="font-size:26pt;"><font face="Engravers MT" color="#AA0055">AÏKIDO&nbsp;FFAB&nbsp;MOSELLE</font></span><font face="Engravers MT"></font><span style="font-size:22pt;"></span>
+            
+            <p align="center"><span style="font-size:22pt;"><font face="Engravers MT" color="#AA0055">AÏKIKAÏ DE FRANCE</font></span></p>
+        </td>
+        <td width="399" height="115" colspan="2">
+            <p align="right">&nbsp;</p>
+            <p align="right"><img src="images/FFABnew.jpg" width="212" height="107" border="0" align="absmiddle"></p>
+            <p align="right">&nbsp;</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="84" height="68">
+            <p align="center"><img src="images/y&y2.jpg" width="60" height="60" border="0"></p>
+        </td>
+        <td width="175" height="68"><b><a href="clubs/clubs.html">Les Clubs</a></b></td>
+        <td width="1074" height="68" colspan="2">
+            <p align="center"><b><span style="font-size:18pt;"><font face="Arial"><a href="../docum/calendrier 2016-2017/calendrier.pdf">Le Calendrier
+</a></font><font face="8514oem">&nbsp;</font>&nbsp;</span><font size="4">&nbsp;&nbsp;</font></b><img src="images/calendrier.gif" width="36" height="36" border="0"><font size="4"><b> &nbsp;</b></font></p>
+        </td>
+        <td width="253" height="68">
+            <p align="right"><a href="commun/comite.html"><b>Le Comité</b></a></p>
+        </td>
+        <td width="146" height="68">
+            <p align="center"><img src="images/religion-ying_yang-12[1].gif" width="60" height="60" border="0"></p>
+        </td>
+    </tr>
+    <tr>
+        <td width="84" height="68">
+            <p align="center"><img src="images/y&y2.jpg" width="59" height="59" border="0"></p>
+        </td>
+        <td width="175" height="68"><a href="docum/docum.html"><b>Documentation</b></a></td>
+        <td width="1074" height="272" colspan="2" rowspan="4" align="center" valign="middle">
+            <p align="center"><img src="images/fondoct2011-1.jpg" width="581" height="299" border="0"></p>
+            <p>&nbsp;</p>
+        </td>
+        <td width="253" height="68">
+            <p align="right"><a href="technic/commissions.htm"><b>Commissions</b></a></p>
+        </td>
+        <td width="146" height="68">
+            <p align="center"><img src="images/y&y2.jpg" width="60" height="60" border="0"></p>
+        </td>
+    </tr>
+    <tr>
+        <td width="84" height="68">
+            <p align="center"><img src="images/y&y2.jpg" width="60" height="60" border="0"></p>
+        </td>
+        <td width="175" height="68"><b><a href="news/retrospective.htm">Rétrospective</a></b></td>
+        <td width="253" height="68">
+            <p align="right"><a href="commun/actu.htm"><b>Actualités</b></a></p>
+        </td>
+        <td width="146" height="68">
+            <p align="center"><img src="images/y&y2.jpg" width="60" height="60" border="0"></p>
+        </td>
+    </tr>
+    <tr>
+        <td width="84" height="68">
+            <p align="center"><img src="images/y&y2.jpg" width="60" height="59" border="0"></p>
+        </td>
+        <td width="175" height="68"><a href="commun/autour.htm"><b>Autour de la pratique</b></a></td>
+        <td width="253" height="68">
+            <p align="right"><a href="commun/liens.html"><b>Liens utiles</b></a></p>
+        </td>
+        <td width="146" height="68">
+            <p align="center"><img src="images/y&y2.jpg" width="60" height="60" border="0"></p>
+        </td>
+    </tr>
+    <tr>
+        <td width="84" height="68">
+            <p align="center"><img src="images/y&y2.jpg" width="60" height="60" border="0"></p>
+        </td>
+        <td width="175" height="68"><a href="commun/inmemoriam.htm"><b>In mémoriam</b></a></td>
+        <td width="253" height="68">
+            <p align="right"><b><a href="commun/videos.htm">Vidéos</a></b></p>
+        </td>
+        <td width="146" height="68">
+            <p align="center"><img src="images/y&y2.jpg" width="60" height="60" border="0"></p>
+        </td>
+    </tr>
+    <tr>
+        <td width="84" height="56">
+            <p align="center">&nbsp;</p>
+        </td>
+        <td width="175" height="56">
+            <p><b><font size="4" color="blue"><span style="background-color:white;">&nbsp;</span></font></b></p>
+        </td>
+        <td width="541" height="56">
+            <p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.ffabaikido.fr/fr/les-ma-tres-fondateurs-23.html">Ô Morihei Ueshiba</a><a href="http://www.ffab-aikido.fr/fr/index.asp"></a></p>
+        </td>
+        <td width="533" height="56">
+            <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.ena-aikido.com/index.php?option=com_content&view=article&id=18&Itemid=20">Tamura Nobuyoshi Shihan</a></p>
+        </td>
+        <td width="253" height="56">
+            <p align="right"><a href="http://ena-aikido.com/"><b>Visiter le site de l'E.N.A</b></a> </p>
+        </td>
+        <td width="146" height="56">
+            <p align="center"><img src="images/Logo_ENA_90x80.png" width="60" height="53" border="0"></p>
+        </td>
+    </tr>
+    <tr>
+        <td width="84" height="42">
+            <p align="center"><b>Visiteurs</b> &nbsp;&nbsp;: </p>
+        </td>
+        <td width="175" height="42">
+            <div style="text-align:center;">
+                <p><a href="http://www.yellis.net/" target="_blank">
+					<img src="http://www.yellis.net/outils/compteur/compteur.php?id_client=comite-cpt1&type=1" alt="www.yellis.net: Compteurs" border="0">
+					</a></p>
+            </div>
+        </td>
+        <td width="1074" height="42" colspan="2">
+            <p align="center">
+			<a href="http://aikido-moselle.net/docum/docum.html#infosut">
+			<font color="#FF0000" face="Arial, Helvetica, sans-serif" size="4" color="red"><img src="docum/images/nouveau_anime.gif" alt="" width="64" height="25" border="0">
+				</font></a>
+			<span style="background-color:yellow;">
+				</span><a href="docum/calendrier 2016-2017/YUDANSHA 2016 2017.pdf"><b>YUDANSHA</b></a>
+				<a href="http://aikido-moselle.net/docum/docum.html#infosut">
+<font color="#FF0000" face="Arial, Helvetica, sans-serif" size="3">
+<img src="docum/images/nouveau_anime.gif" alt="" width="64" height="25" border="0"></font></a></p>
+        </td>
+        <td width="399" height="42" colspan="2">
+            <p align="center"><a href="http://youtu.be/D_di5gUEX8I"><b>Utiliser un Défibrillateur Semi Automatique</b></a></p>
+        </td>
+    </tr>
+</table>
+
+<div id="layer1" style="width:1634px; height:54px; position:absolute; left:22px; top:746px; z-index:0;">
+<div id="marqueechildlayer0" style="position:absolute; left:0; top:0; width:100%; height:100%;" namo_marquee>
+        <p align="left"><font face="Times New Roman" color="purple"><b><u>16 octobre&nbsp;2016&nbsp;&nbsp;</u>- Mise à&nbsp;jour des pages : Calendrier. &nbsp; </b></font></p>
+</div>
+</div>
+<p align="center">&nbsp;</p>
+	</body>
+	</html>
