@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<link href='../fullcalendar.min.css' rel='stylesheet' />
+<link href='../fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<script src='../lib/moment.min.js'></script>
+<script src='../lib/jquery.min.js'></script>
+<script src='../fullcalendar.min.js'></script>
+<script src='../locale-all.js'></script>
+<script>
+
+	$(document).ready(function() {
+		var initialLocaleCode = 'fr';
+
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
+			defaultDate: '2017-01-01',
+			locale: initialLocaleCode,
+			buttonIcons: false, // show the prev/next text
+			weekNumbers: true,
+			navLinks: true, // can click day/week names to navigate views
+			editable: true,
+			eventLimit: true, // allow "more" link when too many events
+			events: [
+				{
+					title: 'Portes ouvertes clubs',
+					start:'2016-09-06',
+					end: '2016-09-28'
+				},
+				{
+					title: 'Formation continue',
+					start: '2016-09-17'
+				},
+				{
+					title: 'Stage de bases',
+					start: '2016-09-18'
+				},
+				{
+					title: 'Assemblée générale Moselle',
+					start: '2016-10-01'
+				},
+				{
+					title: 'Rencontre des cadres',
+					start: '2016-10-15'
+				},
+				{
+					title: 'Assemblée générale Lorraine',
+					start: '2016-10-16'
+				},
+				{
+					title: 'Recontre Ados/profs',
+					start: '2016-10-12'
+				},
+				{
+					title: 'Stages jeunes 6/10 ans',
+					start: '2016-10-13'
+				},
+				{
+					title: 'Formation Continue CN2',
+					start: '2016-10-19'
+				},
+				{
+					title: 'Stages de bases',
+					start: '2016-10-20'
+				},
+				{
+					title: 'Préparation grades Dan',
+					start: '2017-01-07'
+				},
+				{
+					title: 'Préparation grades Dan',
+					//url: 'http://google.com/',
+					start: '2016-01-08'
+				},
+				{
+					title: 'Rencontre ados/profs',
+					start: '2017-01-14'				
+				},
+				{
+					title: 'Formation continue CN3',
+					start: '2017-01-28'
+				
+				},
+				{
+					title: 'Stage de bases',
+					start: '2017-01-29'
+				},
+				{
+					title: 'Hommage Tamura',
+					start:	'2017-03-02'
+				},
+				{
+					title: 'Formation continue CN4',
+					start: '2017-03-11'				
+				},
+				{
+					title: 'Stage de bases',
+					start: '2017-03-12'
+				},
+				{
+					title: 'Rencontre Ados/profs',
+					start: '2017-03-18'				
+				},
+				{
+					title: 'Stage jeunes 9/13 ans',
+					start: '2017-03-19'
+				},
+				{
+					title: 'Stage Jacques Bonnemaison CEN',
+					start: '2017-04-01'
+									
+				},
+				{
+					title: 'Stage Jacques Bonnemaison CEN',
+					start: '2017-04-02'
+				},
+				{
+					title: 'Stage de masse (Jeunes)',
+					start: '2017-05-07'
+				},
+				{
+					title: 'Stage Antoine Soares CEN',
+					start: '2017-05-13'				
+				},
+				{
+					title: 'Stage Antoine Soares CEN',
+					start: '2017-05-14'				
+				},
+				{
+					title: 'Formation continue CN5',
+					start: '2017-05-20'				
+				},
+				{
+					title: 'Stage de bases',
+					start: '2017-05-21'				
+				},
+				{
+					title: 'Préparation grades',
+					start: '2017-05-27'				
+				},
+				{
+					title: 'Rencontre Ados/Profs',
+					start: '2017-06-10'				
+				},
+				{
+					title: 'Stage Jeunes 6/13 ans',
+					start: '2017-06-11'				
+				}
+			]
+		});
+
+		// build the locale selector's options
+		$.each($.fullCalendar.locales, function(localeCode) {
+			$('#locale-selector').append(
+				$('<option/>')
+					.attr('value', localeCode)
+					.prop('selected', localeCode == initialLocaleCode)
+					.text(localeCode)
+			);
+		});
+
+		// when the selected option changes, dynamically change the calendar option
+		$('#locale-selector').on('change', function() {
+			if (this.value) {
+				$('#calendar').fullCalendar('option', 'locale', this.value);
+			}
+		});
+	});
+
+</script>
+<style>
+
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		font-size: 14px;
+	}
+
+	#top {
+		background: #eee;
+		border-bottom: 1px solid #ddd;
+		padding: 0 10px;
+		line-height: 40px;
+		font-size: 12px;
+	}
+
+	#calendar {
+		max-width: 900px;
+		margin: 40px auto;
+		padding: 0 10px;
+	}
+
+</style>
+</head>
+<body>
+
+	<div id='top'>
+
+		Locales:
+		<select id='locale-selector'></select>
+
+	</div>
+
+	<div id='calendar'></div>
+
+</body>
+</html>
